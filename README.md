@@ -1,4 +1,4 @@
-This is simple crud operation work
+This is simple crud operation using React, Node, Express, MySQL, Formik and Yup
 
 Follow these steps to run the app on your local machine,
 
@@ -23,13 +23,13 @@ Assume you have node & mysql installed
     2. Run "npm install" from the crud-app directory & Run "npm install" from the crud-server directory.
 
     3. Create .env file and insert following data properly
-            PORT=4000
-            DB_HOST=localhost
-            DB_USER=root
-            DB_PWD=
+            PORT= -- port number
+            DB_HOST= -- host name --
+            DB_USER= -- username --
+            DB_PWD= -- password --
             DB_DATABASE=crud_app
 
 
-    3. To run the front-end and back-end
+    4. To run the front-end and back-end
         ->  "npm start" on crud-server directory
         ->  "npm start" on crud-app directory

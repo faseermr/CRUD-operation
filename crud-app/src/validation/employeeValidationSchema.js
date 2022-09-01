@@ -1,5 +1,6 @@
 import * as yup from "yup";
 
+// validation schema for eployee details
 export const employeeValidationSchema = () =>
   yup.object().shape({
     fname: yup.string().strict().required("required"),
@@ -9,7 +10,8 @@ export const employeeValidationSchema = () =>
     date_of_birth: yup.string().strict().required("required"),
     mobile: yup
       .number()
+      .min(10000000, "please give a valid mobile number")
+      .max(999999999, "please give a valid mobile number")
       .required("required")
-      .min(10, "must be 10 numbers")
       .typeError("you must specify a number"),
   });

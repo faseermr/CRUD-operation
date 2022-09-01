@@ -4,17 +4,20 @@ import { useParams, useNavigate } from "react-router-dom";
 import { employeeValidationSchema } from "../../validation/employeeValidationSchema";
 import EmployeeServices from "../../services/Employee.services";
 
+const initialState = {
+  fname: "",
+  lname: "",
+  email: "",
+  mobile: "",
+  date_of_birth: "",
+  hometown: "",
+};
+
 const Edit_Employee = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [employeeData, setEmployeeData] = useState({
-    fname: "",
-    lname: "",
-    email: "",
-    mobile: "",
-    date_of_birth: "",
-    hometown: "",
-  });
+
+  const [employeeData, setEmployeeData] = useState(initialState);
   const formik = useFormik({
     initialValues: {
       fname: employeeData.fname,
@@ -38,14 +41,7 @@ const Edit_Employee = () => {
         hometown: e_data.hometown,
       });
       alert(res.data.message);
-      setEmployeeData({
-        fname: "",
-        lname: "",
-        email: "",
-        mobile: "",
-        date_of_birth: "",
-        hometown: "",
-      });
+      setEmployeeData(initialState);
       navigate("/employee-list");
     },
   });
@@ -80,9 +76,10 @@ const Edit_Employee = () => {
               className="form-control"
               name="fname"
               defaultValue={employeeData.fname}
+              onBlur={formik.handleBlur}
               onChange={formik.handleChange}
             />
-            {formik.errors.fname ? (
+            {formik.touched.fname && formik.errors.fname ? (
               <div className="text-danger">{formik.errors.fname}</div>
             ) : null}
           </div>
@@ -92,9 +89,10 @@ const Edit_Employee = () => {
               className="form-control"
               name="lname"
               defaultValue={employeeData.lname}
+              onBlur={formik.handleBlur}
               onChange={formik.handleChange}
             />
-            {formik.errors.lname ? (
+            {formik.touched.lname && formik.errors.lname ? (
               <div className="text-danger">{formik.errors.lname}</div>
             ) : null}
           </div>
@@ -104,10 +102,12 @@ const Edit_Employee = () => {
               type="date"
               className="form-control"
               name="date_of_birth"
+              max={new Date().toISOString().split("T")[0]}
               defaultValue={employeeData.date_of_birth}
+              onBlur={formik.handleBlur}
               onChange={formik.handleChange}
             />
-            {formik.errors.date_of_birth ? (
+            {formik.touched.date_of_birth && formik.errors.date_of_birth ? (
               <div className="text-danger">{formik.errors.date_of_birth}</div>
             ) : null}
           </div>
@@ -117,9 +117,10 @@ const Edit_Employee = () => {
               className="form-control"
               name="email"
               defaultValue={employeeData.email}
+              onBlur={formik.handleBlur}
               onChange={formik.handleChange}
             />
-            {formik.errors.email ? (
+            {formik.touched.email && formik.errors.email ? (
               <div className="text-danger">{formik.errors.email}</div>
             ) : null}
           </div>
@@ -129,9 +130,10 @@ const Edit_Employee = () => {
               className="form-control"
               name="mobile"
               defaultValue={employeeData.mobile}
+              onBlur={formik.handleBlur}
               onChange={formik.handleChange}
             />
-            {formik.errors.mobile ? (
+            {formik.touched.mobile && formik.errors.mobile ? (
               <div className="text-danger">{formik.errors.mobile}</div>
             ) : null}
           </div>
@@ -141,9 +143,10 @@ const Edit_Employee = () => {
               className="form-control"
               name="hometown"
               defaultValue={employeeData.hometown}
+              onBlur={formik.handleBlur}
               onChange={formik.handleChange}
             />
-            {formik.errors.hometown ? (
+            {formik.touched.hometown && formik.errors.hometown ? (
               <div className="text-danger">{formik.errors.hometown}</div>
             ) : null}
           </div>

@@ -11,7 +11,7 @@ const AddEmployee = () => {
       fname: "",
       lname: "",
       email: "",
-      mobile: 0,
+      mobile: "",
       date_of_birth: "",
       hometown: "",
     },
@@ -43,9 +43,10 @@ const AddEmployee = () => {
             <input
               className="form-control"
               name="fname"
+              onBlur={formik.handleBlur}
               onChange={formik.handleChange}
             />
-            {formik.errors.fname ? (
+            {formik.touched.fname && formik.errors.fname ? (
               <div className="text-danger">{formik.errors.fname}</div>
             ) : null}
           </div>
@@ -54,9 +55,10 @@ const AddEmployee = () => {
             <input
               className="form-control"
               name="lname"
+              onBlur={formik.handleBlur}
               onChange={formik.handleChange}
             />
-            {formik.errors.lname ? (
+            {formik.touched.lname && formik.errors.lname ? (
               <div className="text-danger">{formik.errors.lname}</div>
             ) : null}
           </div>
@@ -67,9 +69,10 @@ const AddEmployee = () => {
               className="form-control"
               max={new Date().toISOString().split("T")[0]}
               name="date_of_birth"
+              onBlur={formik.handleBlur}
               onChange={formik.handleChange}
             />
-            {formik.errors.date_of_birth ? (
+            {formik.touched.date_of_birth && formik.errors.date_of_birth ? (
               <div className="text-danger">{formik.errors.date_of_birth}</div>
             ) : null}
           </div>
@@ -78,9 +81,10 @@ const AddEmployee = () => {
             <input
               className="form-control"
               name="email"
+              onBlur={formik.handleBlur}
               onChange={formik.handleChange}
             />
-            {formik.errors.email ? (
+            {formik.touched.email && formik.errors.email ? (
               <div className="text-danger">{formik.errors.email}</div>
             ) : null}
           </div>
@@ -89,9 +93,10 @@ const AddEmployee = () => {
             <input
               className="form-control"
               name="mobile"
+              onBlur={formik.handleBlur}
               onChange={formik.handleChange}
             />
-            {formik.errors.mobile ? (
+            {formik.touched.mobile && formik.errors.mobile ? (
               <div className="text-danger">{formik.errors.mobile}</div>
             ) : null}
           </div>
@@ -100,9 +105,10 @@ const AddEmployee = () => {
             <input
               className="form-control"
               name="hometown"
+              onBlur={formik.handleBlur}
               onChange={formik.handleChange}
             />
-            {formik.errors.hometown ? (
+            {formik.touched.hometown && formik.errors.hometown ? (
               <div className="text-danger">{formik.errors.hometown}</div>
             ) : null}
           </div>
