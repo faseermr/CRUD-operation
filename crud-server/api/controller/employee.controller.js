@@ -42,6 +42,7 @@ exports.getById = (req, res) => {
   });
 };
 
+// to delete employee details
 exports.deleteById = (req, res) => {
   const { id } = req.params;
   Employee.deleteById(id, (err, response) => {
@@ -55,6 +56,7 @@ exports.deleteById = (req, res) => {
   });
 };
 
+// to update employee details
 exports.update = (req, res) => {
   const { id } = req.params;
   // console.log(req.body);

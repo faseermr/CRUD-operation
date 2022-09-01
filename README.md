@@ -16,13 +16,13 @@ Assume you have node & mysql installed
         `email` varchar(100) NOT NULL,
         `date_of_birth` varchar(100) NOT NULL,
         `mobile` int(10) NOT NULL,
-            `hometown` varchar(50) NOT NULL
+        `hometown` varchar(50) NOT NULL
         ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;"
 
 
     2. Run "npm install" from the crud-app directory & Run "npm install" from the crud-server directory.
 
-    3. Create .env file and insert following data properly
+    3. Create .env file in crud-server directory and insert following data properly
             PORT= -- port number
             DB_HOST= -- host name --
             DB_USER= -- username --

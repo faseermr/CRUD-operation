@@ -17,6 +17,7 @@ app.get("/", (req, res) => {
 
 const employeeRoutes = require("./api/routes/employee.routes");
 
+// define routes
 app.use("/api/employee", employeeRoutes);
 
 // listen for request
