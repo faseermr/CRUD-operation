@@ -4,7 +4,7 @@ Follow these steps to run the app on your local machine,
 
 Assume you have node & mysql installed
 
-    1. Run this command to create a database and table
+    1. Run this query to create a database and table
 
         "CREATE DATABASE IF NOT EXISTS `crud_app` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
         USE `crud_app`;
@@ -21,6 +21,14 @@ Assume you have node & mysql installed
 
 
     2. Run "npm install" from the crud-app directory & Run "npm install" from the crud-server directory.
+
+    3. Create .env file and insert following data properly
+            PORT=4000
+            DB_HOST=localhost
+            DB_USER=root
+            DB_PWD=
+            DB_DATABASE=crud_app
+
 
     3. To run the front-end and back-end
         ->  "npm start" on crud-server directory
