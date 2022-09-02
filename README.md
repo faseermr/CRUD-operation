@@ -23,7 +23,7 @@ Assume you have node & mysql installed
     2. Run "npm install" from the crud-app directory & Run "npm install" from the crud-server directory.
 
     3. Create .env file in crud-server directory and insert following data properly
-            PORT= -- port number
+            PORT= -- port number -- please set 4000 as port number in this project
             DB_HOST= -- host name --
             DB_USER= -- username --
             DB_PWD= -- password --
